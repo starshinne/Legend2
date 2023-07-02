@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   public PlayerInputControll inputControll;
+   public Vector2 inputDirection;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   private void Awake() {
+    inputControll = new PlayerInputControll();
+   }
+
+   private void OnEnable() {
+    inputControll.Enable();
+   }
+
+   private void OnDisable() {
+    inputControll.Disable();
+   }
+
+   private void Update() {
+    inputDirection = inputControll.Gameplay.Move.ReadValue<Vector2>();
+   }
 }
