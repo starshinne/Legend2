@@ -572,6 +572,7 @@ GameObject:
   - component: {fileID: 678287420}
   - component: {fileID: 678287419}
   - component: {fileID: 678287421}
+  - component: {fileID: 678287422}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -639,9 +640,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678287416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.2294664, y: 1.39, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -677,7 +678,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -695,7 +696,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150ef3b83d9d3324795297fff5c92c57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   inputDirection: {x: 0, y: 0}
+  speed: 300
+  jumpForce: 16
+--- !u!114 &678287422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678287416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d5389317140fe44b932b3728f1aa05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGround: 0
+  checkRadius: 0.2
+  bottomOffset: {x: 0, y: 0}
+  Ground:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &943839685
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,7 +2399,7 @@ GameObject:
   - component: {fileID: 2105824015}
   - component: {fileID: 2105824014}
   - component: {fileID: 2105824013}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4820,7 +4842,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8472e472665a94c4d97ce63a8c8ac14d, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
